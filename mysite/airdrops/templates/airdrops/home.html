@@ -1,0 +1,43 @@
+{% extends 'airdrops/base.html' %}
+{% load static %}
+
+{% block content %}
+<header>
+    <h1 class="main-title fade-in">
+        Discover Your Next 
+           Trusted Airdrop
+    </h1>
+</header>
+
+<section class="trusted-airdrops slide-in">
+    <h2>Trusted Airdrops <i class="fas fa-check-circle"></i></h2>
+    <div class="airdrops-grid">
+        {% for airdrop in trusted_airdrops %}
+            {% include 'airdrops/airdrop_card.html' with airdrop=airdrop %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="recent-airdrops slide-in">
+    <h2>Recent Airdrops</h2>
+    <div class="scroll-container">
+        {% for airdrop in recent_airdrops %}
+            {% include 'airdrops/airdrop_card.html' with airdrop=airdrop %}
+        {% endfor %}
+    </div>
+</section>
+
+<section class="top-rated fade-in">
+    <h2>Top Rated Airdrops</h2>
+    <div class="airdrops-grid">
+        {% for airdrop in top_rated_airdrops %}
+            {% include 'airdrops/airdrop_card.html' with airdrop=airdrop %}
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/animations.js' %}"></script>
+<script src="{% static 'js/stars.js' %}"></script>
+{% endblock %}

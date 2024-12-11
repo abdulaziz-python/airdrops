@@ -1,0 +1,31 @@
+{% load static %}
+
+<div class="airdrop-card" data-airdrop-id="{{ airdrop.id }}">
+    <div class="airdrop-image">
+        <img src="{{ airdrop.image.url }}" alt="{{ airdrop.name }}" class="airdrop-image">
+    </div>
+    <div class="airdrop-content">
+        <div>
+            <div class="airdrop-header">
+                <h3 class="airdrop-name">
+                    {{ airdrop.name }}
+                    {% if airdrop.is_verified %}
+                        <i class="fas fa-badge-check verified-icon"></i>
+                    {% endif %}
+                </h3>
+                <a href="{{ airdrop.link }}" class="airdrop-link" target="_blank">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            <p class="airdrop-description">{{ airdrop.description }}</p>
+        </div>
+        <div class="airdrop-footer">
+            <div class="star-rating">
+                <button class="star-btn" onclick="addStar({{ airdrop.id }})">
+                    <i class="fas fa-star"></i>
+                </button>
+                <span class="star-count">{{ airdrop.stars }}</span>
+            </div>
+        </div>
+    </div>
+</div>

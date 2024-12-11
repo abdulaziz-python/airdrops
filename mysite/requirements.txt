@@ -1,0 +1,14 @@
+asgiref==3.7.2
+autopep8==2.3.1
+Django==5.0.9
+django-appconf==1.0.6
+django-compressor==4.4
+django-crispy-forms==2.1
+Pillow==10.1.0
+psycopg2-binary==2.9.10
+pycodestyle==2.12.1
+python-dotenv==1.0.0
+rcssmin==1.1.1
+rjsmin==1.2.1
+sqlparse==0.4.4
+typing_extensions==4.9.0
